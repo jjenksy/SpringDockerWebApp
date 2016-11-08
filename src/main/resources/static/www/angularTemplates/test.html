@@ -1,0 +1,30 @@
+<div>
+    <div class="page-header">
+        <h1>HTTP Test</h1>
+    </div>
+
+    <form name="searchUser" ng-submit="search(http)">
+        <div class="form-group">
+            <!--ng-model directive creates a property for the username-->
+            <label for="exampleInput">Http Path</label>
+            <input type="search" id="exampleInput" required placeholder="http://httpbin.org/" ng-model="http">
+            <!--ng-click will call a function-->
+            <input type="submit" class="btn btn-primary" value="Search">
+        </div>
+        <div>
+            {{http}}
+        </div>
+        <!--<label for="fistName">FirstName:</label>-->
+        <!--<input type="text" name="fistName" size="50"/><br/>-->
+        <!--<label for="lastName">LastName:</label>-->
+        <!--<input type="text" name="lastName" size="50"/><br/>-->
+        <!--<label for="email">Email:</label>-->
+        <!--<input type="text" name="email" size="15"/><br/>-->
+        <!--<label for="bio">Bio:</label><br/>-->
+        <!--<textarea name="bio" cols="80" rows="5">-->
+        <!--</textarea><br/>-->
+        <!--<input type="submit"/>-->
+    </form>
+
+
+</div>

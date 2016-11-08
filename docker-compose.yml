@@ -1,0 +1,25 @@
+#file for setting up the docker-compose for all the containers needed
+#services are running containers
+#varsion has to be on a compose file
+version: '2'
+#services is where we define our services
+services:
+  springapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - springapp-network
+
+  mongodb:
+    image: mongo
+    networks:
+          - springapp-network
+
+
+#network defines the private network for the containers
+networks:
+  springapp-network:
+    driver: bridge

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="crudPage">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--core angular-->
+    <script src="bower_components/angular/angular.js"></script>
+    <!--angular routing-->
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <!--main app controller-->
+    <script src="app.js"></script>
+    <!--main controller-->
+    <script src="controller/MainCtlr.js"></script>
+    <!--user service-->
+    <script src="services/getUserDetails.js"></script>
+    <!--test controller-->
+    <script src="controller/TestCtlr.js"></script>
+    <!--http service-->
+    <script src="services/httpRequester.js"></script>
+    <!--product controller-->
+    <script src="controller/productListCtlr.js"></script>
+    <!--controller for the service ticket-->
+    <script src="controller/BlogController.js"></script>
+    <!--new customer entry section-->
+    <script src="controller/AddressEntryCtrl.js"></script>
+    <!--service to and and retrieve user data-->
+    <script src="services/httpCustomerData.js"></script>
+</head>
+
+<body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/blog">Link to Blog route</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <div class="container">
+                <div class="jumbotron">
+                <!--directive for my routing to send the view-->
+                <div ng-view></div>
+                </div>
+            </div>
+
+
+
+
+
+    <!--Jquery and bootstrap-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<div>
+    <div class="page-header">
+        <h1>HTTP Main</h1>
+    </div>
+        <!--method="POST"-->
+        <form name="searchUser" ng-submit="search(username)">
+            <div class="form-group">
+                <!--ng-model directive creates a property for the username-->
+                <label for="exampleInput">User Name</label>
+                <input type="search" id="exampleInput" required placeholder="User to find" ng-model="username">
+                <!--ng-click will call a function-->
+                <input type="submit" class="btn btn-primary" value="Search">
+            </div>
+            <!--<label for="fistName">FirstName:</label>-->
+            <!--<input type="text" name="fistName" size="50"/><br/>-->
+            <!--<label for="lastName">LastName:</label>-->
+            <!--<input type="text" name="lastName" size="50"/><br/>-->
+            <!--<label for="email">Email:</label>-->
+            <!--<input type="text" name="email" size="15"/><br/>-->
+            <!--<label for="bio">Bio:</label><br/>-->
+            <!--<textarea name="bio" cols="80" rows="5">-->
+            <!--</textarea><br/>-->
+            <!--<input type="submit"/>-->
+        </form>
+        <!--ng-show looks to see if the user object is truthy meaning meanin not undefined show the table if true-->
+        <!--the div is the entry point for the template add the single quotes so angular does not try and evaluate it-->
+        <div ng-include="'angularTemplates/userdetails.html'" ng-show="user"></div>
+
+</div>
