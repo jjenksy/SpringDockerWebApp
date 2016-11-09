@@ -8,13 +8,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    links:
+              - mongodb:mongodb
     ports:
       - "8080:8080"
     networks:
       - springapp-network
 
+
   mongodb:
+    container_name: spring-app-mongo
     image: mongo
+    build:
+            context: .
+            dockerfile: .docker/mongo.dockerfile
+    ports:
+          - "27017:27017"
     networks:
           - springapp-network
 

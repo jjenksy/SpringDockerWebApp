@@ -5,7 +5,7 @@
     'use strict';
     var app = angular.module("crudPage");
 
-    var BlogController = function ($location,$scope, httpCustomerData) {
+    var BlogController = function ($location,$scope, httpBlogData) {
 
         $scope.ticketName = "Angular Heading";
         $scope.message = "Using Angular.js Controllers and Directives";
@@ -14,7 +14,7 @@
          * Gets the current customer info. as soon as the page is visited
          */
         (function getCustomer(){
-            httpCustomerData.getCustomerData("/api/blog").then(function(data)
+            httpBlogData.getBlogData("/api/blog").then(function(data)
             {
                 $scope.blog = data;
             });
@@ -30,14 +30,9 @@
          */
         $scope.changedValue = function() {
 
-            httpCustomerData.getCustomerDataByID("/api/blog",$scope.selectedCustomer)
+            httpBlogData.getBlogDataByID("/api/blog",$scope.selectedCustomer)
                 .then(function(data){
-                    console.log(data[0].address);
-                    //after the data is retrieved from the server resolve the view
-                    $scope.address = data[0].address;
-                    $scope.city = data[0].city;
-                    $scope.zip = data[0].zip;
-                    $scope.country = data[0].country;
+                    console.log(data);
                 })
         }
 

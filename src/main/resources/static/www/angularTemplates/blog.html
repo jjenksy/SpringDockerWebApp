@@ -2,22 +2,10 @@
     <!--left side coloumn on form-->
     <h1>{{ticketName}}</h1>
     <h6>{{message}}</h6>
-    <div class="col-sm-6">
-        <div id="tb-testimonial" class="testimonial testimonial-default" ng-repeat="blogs in blog">
-            <div class="testimonial-section">
-            {{blogs.address}}
-            </div>
-            <div class="testimonial-desc">
-                {{blogs.email}}
-                <div class="testimonial-writer">
-                    {{blogs.firstName}}
-                    <div class="testimonial-writer-name"></div>
-                    {{blogs.twitterHandle}}
-                    <div class="testimonial-writer-designation"></div>
-                    <a href="#" class="testimonial-writer-company"></a>
-                </div>
-            </div>
-        </div>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active"  ng-repeat="blogs in blog">
+            <h5 class="list-group-item-heading"> {{blogs.author}}</h5>
+            <p class="list-group-item-text"> {{blogs.description}}</p>
+        </a>
     </div>
-
 </form>

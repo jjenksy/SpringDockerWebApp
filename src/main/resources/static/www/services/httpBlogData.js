@@ -5,13 +5,13 @@
 
 (function(){
     "use strict";
-    var httpCustomerData = function($http, $log){
+    var httpBlogData = function($http, $log){
         /**
          * This method allows for custom searching based on the argument passed to it
          * so if I invoke getUser('findAll') it will get all my users from the data base
          * @param userName the argument to be passed to the get request
          */
-        var getCustomerData = function(url){
+        var getBlogData = function(url){
 
             return $http.get(url)
                 .then(function(response) {
@@ -24,7 +24,7 @@
                 });
         };
 
-        var getCustomerDataByID = function(url,id){
+        var getBlogDataByID = function(url,id){
 
             //make sure it is an int
             var intID = parseInt(id);
@@ -45,7 +45,7 @@
          * @param url the api url for the controller on the server
          * @param data the data to post
          */
-        var setCustomerData = function (url, data) {
+        var setBlogData = function (url, data) {
 
                 //post the data
             $http.post(url,data).then(function(e){
@@ -59,14 +59,14 @@
 
 
         return {
-            getCustomerData:getCustomerData,
-            setCustomerData:setCustomerData,
-            getCustomerDataByID:getCustomerDataByID
+            getBlogData:getBlogData,
+            setBlogData:setBlogData,
+            getBlogDataByID:getBlogDataByID
         };
 
 
     };
     var module = angular.module('crudPage');
     //call the factory function to create the service
-    module.factory("httpCustomerData", httpCustomerData);
+    module.factory("httpBlogData", httpBlogData);
 }());
